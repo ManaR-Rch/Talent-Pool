@@ -1,6 +1,6 @@
 <?php
 
-
+namespace App\Http\Controllers;
 
 use App\Http\Requests\AnnonceRequest;
 use App\Services\AnnonceService;
