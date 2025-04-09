@@ -14,7 +14,9 @@ class DashboardController extends Controller
     protected $statistiqueService;
 
     public function __construct(
-        
+        AnnonceService $annonceService,
+        CandidatureService $candidatureService,
+        StatistiqueService $statistiqueService
     ) {
         $this->annonceService = $annonceService;
         $this->candidatureService = $candidatureService;
