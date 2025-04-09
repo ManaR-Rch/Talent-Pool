@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+
 
 use App\Http\Requests\CandidatureRequest;
 use App\Services\AnnonceService;
