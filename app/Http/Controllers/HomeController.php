@@ -16,7 +16,11 @@ class HomeController extends Controller
     public function index()
     {
         // Récupérer quelques statistiques pour la page d'accueil
-    
+        $stats = [
+            'total_annonces' => Annonce::count(),
+            'total_candidats' => User::where('role', 'candidat')->count(),
+            'total_recruteurs' => User::where('role', 'recruteur')->count(),
+        ];
         
         // Récupérer les dernières annonces actives
         $dernieres_annonces = Annonce::where('active', true)
