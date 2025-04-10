@@ -9,7 +9,18 @@ class Annonce extends Model
 {
     use HasFactory;
 
- 
+    protected $fillable = [
+        'user_id',
+        'titre',
+        'description',
+        'lieu',
+        'type_contrat',
+        'salaire_min',
+        'salaire_max',
+        'competences_requises',
+        'date_limite',
+        'active',
+    ];
 
     protected $casts = [
         'date_limite' => 'date',
