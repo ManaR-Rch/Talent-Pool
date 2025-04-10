@@ -19,10 +19,7 @@ class Candidature extends Model
         'notes_recruteur',
     ];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+
 
     public function annonce()
     {
