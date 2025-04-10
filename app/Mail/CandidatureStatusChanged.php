@@ -2,10 +2,7 @@
 
 namespace App\Mail;
 
-use App\Models\Candidature;
-use Illuminate\Bus\Queueable;
-use Illuminate\Mail\Mailable;
-use Illuminate\Queue\SerializesModels;
+
 
 class CandidatureStatusChanged extends Mailable
 {
