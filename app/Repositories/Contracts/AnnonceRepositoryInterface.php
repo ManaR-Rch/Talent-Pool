@@ -10,5 +10,6 @@ interface AnnonceRepositoryInterface
     public function getByUser($userId);
     public function create(array $data);
     public function update($id, array $data);
-
+    public function delete($id);
+    public function countByUser($userId);
 }
