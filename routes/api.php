@@ -6,31 +6,27 @@ use App\Http\Controllers\Api\CandidatureController;
 use App\Http\Controllers\Api\StatistiqueController;
 use Illuminate\Support\Facades\Route;
 
-// Routes publiques
 Route::get('/annonces', [AnnonceController::class, 'index']);
 Route::get('/annonces/{id}', [AnnonceController::class, 'show']);
 
-// Routes d'authentification
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-// Routes protégées
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     
-    // Annonces
+   
     Route::post('/annonces', [AnnonceController::class, 'store']);
     Route::put('/annonces/{id}', [AnnonceController::class, 'update']);
     Route::delete('/annonces/{id}', [AnnonceController::class, 'destroy']);
-    
-    // Candidatures
+  
     Route::get('/candidatures', [CandidatureController::class, 'index']);
     Route::get('/candidatures/{id}', [CandidatureController::class, 'show']);
     Route::post('/candidatures', [CandidatureController::class, 'store']);
     Route::patch('/candidatures/{id}/status', [CandidatureController::class, 'updateStatus']);
     Route::delete('/candidatures/{id}', [CandidatureController::class, 'destroy']);
     
-    // Statistiques
     Route::get('/statistiques/recruteur', [StatistiqueController::class, 'recruteur']);
     Route::get('/statistiques/global', [StatistiqueController::class, 'global']);
 });
